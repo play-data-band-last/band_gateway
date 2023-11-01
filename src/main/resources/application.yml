@@ -1,6 +1,7 @@
 server:
   port: 8000
-
+  tomcat:
+    max-threads: 500
 spring:
   application:
     name: BAND-GATEWAY-SERVICE
@@ -78,7 +79,10 @@ spring:
           predicates:
             - Path=/api/v1/comment/**
 
-
+        - id: BAND-NOTIFY-SERVICE
+          uri: "lb://BAND-NOTIFY-SERVICE"
+          predicates:
+            - Path=/api/v1/notify/**
 
 # Config Server Observing Update..
 management:
