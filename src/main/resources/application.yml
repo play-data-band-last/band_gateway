@@ -91,6 +91,7 @@ management:
       exposure:
         include: health,beans,refresh
 
+
 eureka:
   client:
     serviceUrl:

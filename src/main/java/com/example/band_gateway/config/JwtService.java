@@ -13,6 +13,7 @@ public class JwtService {
     // msa service 들 sercet data 넣으면 runTime 될거고 그 전엔 error 날거임..
     @Value("${jwt.secret}")
     private String secret;
+
     public Boolean parseToken(String token){
         try{
             Claims body = (Claims) Jwts.parserBuilder()
